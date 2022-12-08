@@ -1,15 +1,12 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Breadcrumbs from "./Breadcrumbs";
-import { Content } from "./comp/Content";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Common from "./comp/Common";
 export default function App() {
-    return (
+  return (
     <>
-      <Breadcrumbs/>
-      <Switch>
-        <Route exact from="/*" render={props => <Content {...props} />} />
-      </Switch>
+      <Routes>
+        <Route path="/*" element={<Common />} />
+      </Routes>
     </>
   );
 }
